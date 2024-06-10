@@ -30,7 +30,7 @@ const AddForm = () => {
       },
     };
 
-    var imagePostUrl = "http://localhost:3010/picture/"; 
+    var imagePostUrl = "https://temprano-pictures-api.onrender.com/picture/";
 
     await axios
       .post(imagePostUrl, { name, file }, headers)

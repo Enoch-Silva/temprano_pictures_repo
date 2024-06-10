@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
- 
+
 import { Wrapper } from "../styles/Wrapper.style";
 import { ImageContainer, ImageCard, ImageInfo } from "../styles/Divs.style";
 
-import {  Subtitulo  } from "../styles/Texto";
+import { Subtitulo } from "../styles/Texto";
 import { Spinner } from "react-bootstrap";
 import Rodape from "../components/Rodape";
 import AddForm from "../components/AddForm";
@@ -23,7 +23,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Modal from "react-modal";
 import "./Modal.style.css";
-import { FaTrash, FaDownload  } from "react-icons/fa";
+import { FaTrash, FaDownload } from "react-icons/fa";
 import { BiImage } from "react-icons/bi";
 
 Modal.setAppElement("#root");
@@ -32,7 +32,7 @@ const Home = () => {
   // CONFIGS DO CARREGAMENTO DE FOTOS DA API
   const [pictures, setPictures] = useState([]);
 
-  var imageUrl = "http://localhost:3010/pictures";
+  var imageUrl = "https://temprano-pictures-api.onrender.com/pictures";
 
   const getPictures = async () => {
     try {
@@ -75,7 +75,7 @@ const Home = () => {
   }
 
   const deletePicture = async (id) => {
-    var deleteUrl = `http://localhost:3010/picture/${id}`;
+    var deleteUrl = `https://temprano-pictures-api.onrender.com/picture/${id}`;
 
     try {
       const response = await axios.delete(deleteUrl);
@@ -91,7 +91,7 @@ const Home = () => {
 
   // CONFIGS DO DOWNLOAD DA IMAGEM
   const getPicture = async (src, nome) => {
-    var oneImageUrl = `http://localhost:3010/${src}`;
+    var oneImageUrl = `https://temprano-pictures-api.onrender.com/${src}`;
 
     await axios
       .get(oneImageUrl, {
@@ -191,7 +191,7 @@ const Home = () => {
               ></Spinner>
             </div>
           ) : (
-            pictures.map((picture) => ( 
+            pictures.map((picture) => (
               <>
                 <ImageCard
                   key={picture.id}
