@@ -1,0 +1,28 @@
+{message ? (
+          <>
+            <Toast
+              onClose={() => setShow(false)}
+              show={show}
+              delay={4000}
+              autohide
+            >
+              <Toast.Header>
+                <img
+                  src="holder.js/20x20?text=%20"
+                  className="rounded me-2"
+                  alt=""
+                />
+                <strong className="me-auto">Temprano</strong>
+                <small>{dataFormatada}</small>
+              </Toast.Header>
+              <Toast.Body>
+                {" "}
+                <MessageAlert>{message}</MessageAlert>
+              </Toast.Body>
+            </Toast>
+          </>
+        ) : (
+          <h3 style={{ marginTop: 10, color: "#003a87" }}>
+            Adicione uma foto a sua galeria
+          </h3>
+        )}
